@@ -38,7 +38,7 @@ Projeto de um conjunto de calculadoras interativas em HTML/CSS/JavaScript para a
 
 
 ## ☁️ Deploy / Teste online (Vercel)
-- Link de demonstração: **[adicione aqui o link do Vercel quando publicar]**
+- Link de demonstração: (https://calcula-facil-beryl.vercel.app/)
 
 ## 👤 Autores
 - Isadora Jucá de Lima - Senai Itapeva
