@@ -1,7 +1,7 @@
 # Calculadoras Web
 
 ## 📌 Descrição
-Projeto de um conjunto de calculadoras interativas em HTML/CSS/JavaScript para a disciplina de Programação Front-End, desenvolvido no curso Técnico de Desenvolvimento de Sistemas (SENAI Itapeva). O usuário pode abrir diferentes calculadoras e consultar o resultado instantâneo.
+Projeto de um conjunto de calculadoras interativas em HTML/CSS/JavaScript para a disciplina de Programação Front-End, desenvolvido no curso Técnico de Desenvolvimento de Sistemas (SENAI Itapeva). O usuário pode abrir diferentes calculadoras e consultar o resultado instantaneamente.
 
 ## 🧩 Funcionalidades
 - Menu principal com cards para três calculadoras:
