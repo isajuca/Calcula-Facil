@@ -1,0 +1,243 @@
+/* Reset básico e estilos gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #050452;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Estilo do header */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    color: white;
+    font-size: 2rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    animation: fadeInDown 0.8s ease-out;
+}
+
+.header-top {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.logo {
+    width: 100px;
+    height: auto;
+}
+
+.top-bar {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+#dateTime {
+    color: white;
+    font-size: 0.95rem;
+    padding: 6px 10px;
+    border-radius: 8px;
+    background: rgba(255,255,255,0.18);
+}
+
+#backButton {
+    border: 0;
+    background: #494d63;
+    color: white;
+    border-radius: 8px;
+    padding: 6px 12px;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+/* Estilo do main - container principal */
+main {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    max-width: 1000px;
+    width: 100%;
+    display: flex;
+    gap: 40px; /* Espaço entre o formulário e o resultado */
+    align-items: flex-start;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+/* Estilo do formulário */
+form {
+    flex: 1; /* O formulário ocupa 1 parte do espaço */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+form label {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+form input {
+    padding: 12px 15px;
+    font-size: 1rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+form input:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102,126,234,0.1);
+}
+
+form button {
+    background: #494d63;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+form button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102,126,234,0.4);
+}
+
+form button:active {
+    transform: translateY(0);
+}
+
+/* Estilo do resultado - posicionado ao lado */
+#resultado-aumento {
+    flex: 1; /* O resultado também ocupa 1 parte do espaço */
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    border-radius: 15px;
+    padding: 25px;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    animation: slideInRight 0.6s ease-out;
+}
+
+#resultado-aumento p {
+    font-size: 1.1rem;
+    margin: 10px 0;
+    padding: 10px;
+    background: white;
+    border-radius: 10px;
+    width: 100%;
+    font-weight: 500;
+}
+
+#resultado-aumento p:first-child {
+    color: #27ae60;
+    border-left: 4px solid #27ae60;
+}
+
+#resultado-aumento p:last-child {
+    color: #2980b9;
+    border-left: 4px solid #2980b9;
+}
+
+/* Estilo do footer */
+footer {
+    margin-top: 30px;
+    text-align: center;
+    color: white;
+    font-size: 0.9rem;
+}
+
+/* Animações */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Responsividade - para telas menores */
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+    }
+    
+    #resultado-aumento {
+        min-height: auto;
+        padding: 20px;
+    }
+    
+    header h1 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Efeito de loading ao clicar no botão */
+form button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Estilo para mensagem de erro */
+#resultado-aumento p[style*="red"] {
+    color: #e74c3c !important;
+    border-left-color: #e74c3c !important;
+    background: #fee;
+}

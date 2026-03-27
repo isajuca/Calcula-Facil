@@ -1,0 +1,239 @@
+/* Reset básico e estilos gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #121212;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 120px 20px 20px;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #121212;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+header h1 {
+    color: white;
+    font-size: 2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+}
+
+.header-top {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.logo {
+    width: 100px;
+    height: auto;
+}
+
+.top-bar {
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    left: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+#dateTime {
+    color: white;
+    background: rgba(0,0,0,0.35);
+    padding: 6px 10px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+}
+
+#backButton {
+    border: 0;
+    background: #A855F7;
+    color: white;
+    border-radius: 8px;
+    padding: 6px 10px;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+main {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    min-height: 500px;
+}
+
+form {
+    flex: 1;
+    padding: 40px;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+form label {
+    font-weight: 600;
+    color: #333;
+    font-size: 1rem;
+    margin-bottom: 5px;
+    display: block;
+}
+
+form input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+form input:focus {
+    border-color: #A855F7;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+form button {
+    background: #A855F7;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    margin-top: 10px;
+}
+
+form button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+form button:active {
+    transform: translateY(0);
+}
+
+#result {
+    flex: 1;
+    padding: 40px;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px;
+    font-size: 1.1rem;
+}
+
+/* Estilização das mensagens de resultado */
+#result p {
+    padding: 12px;
+    border-radius: 8px;
+    background: #f8f9fa;
+    margin: 0;
+    transition: all 0.3s ease;
+}
+
+#result p strong {
+    color: #A855F7;
+    font-weight: 700;
+}
+
+/* Estilo especial para o custo total */
+#result p:last-child {
+    background: #22C55E;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+#result p:last-child strong {
+    color: #ffff;
+}
+
+/* Mensagens de erro */
+#result:empty::before {
+    content: "📊 O resultado aparecerá aqui";
+    color: #999;
+    font-style: italic;
+    text-align: center;
+    display: block;
+    padding: 20px;
+}
+
+/* Responsividade - em telas menores, as colunas ficam empilhadas */
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+    }
+    
+    form, #result {
+        padding: 30px;
+    }
+    
+    body {
+        padding: 10px;
+    }
+    
+    header h1 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Efeitos visuais adicionais */
+form, #result {
+    transition: all 0.3s ease;
+}
+
+/* Animação suave ao carregar os resultados */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#result p {
+    animation: fadeIn 0.4s ease-out forwards;
+}
+
+footer {
+    margin-top: 30px;
+    text-align: center;
+    color: white;
+    font-size: 0.9rem;
+    opacity: 0.9;
+}

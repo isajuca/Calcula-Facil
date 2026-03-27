@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+    <title>Calculadoras</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-top">
+                <img src="logo.png" alt="logo" class="logo">
+                <h1>Calculadoras</h1>
+            </div>
+            <span id="dateTime"></span>
+        </header>
+
+        <main>
+            <div class="cards-grid">
+                <a href="Exercício%201/index.html" class="card">
+                    <div class="card-icon"><img src="Exercício 1/logo1.png" alt="logo" width="120px"></div>
+                    <h2>Calculadora de Horas Extras</h2>
+                    <div class="card-meta">
+                        <span>Calcular agora →</span>
+                    </div>
+                </a>
+
+                <a href="Exercício%202/index.html" class="card">
+                    <div class="card-icon"><img src="Exercício 2/logo2.png" alt="logo" width="100px"></div>
+                    <h2>Calculadora de Aumento Salarial</h2>
+                    <div class="card-meta">
+                        <span>Calcular agora →</span>
+                    </div>
+                </a>
+
+                <a href="Exercício%203/index.html" class="card">
+                    <div class="card-icon"><img src="Exercício 3/logo3.png" alt="logo" width="120px"></div>
+                    <h2>Transporte de Colaboradores</h2>
+                    <div class="card-meta">
+                        <span>Calcular agora →</span>
+                    </div>
+                </a>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Calculadoras. Todos os direitos reservados.</p>
+        </footer>
+    </div>
+
+    <script>
+        function updateDateTime() {
+            const now = new Date();
+            document.getElementById('dateTime').textContent = now.toLocaleString('pt-BR', {
+                weekday: 'long',
+                day: '2-digit',
+                month: 'long',
+                year: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit'
+            });
+        }
+        setInterval(updateDateTime, 1000);
+        updateDateTime();
+    </script>
+</body>
+</html>
